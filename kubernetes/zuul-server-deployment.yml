@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+      run: zuul-server
+    name: zuul-server
+    namespace: default
+spec:
+    externalTrafficPolicy: Cluster
+    ports:
+    - port: 8762
+      protocol: TCP
+      targetPort: 8762
+    selector:
+      run: zuul-server
+    sessionAffinity: None
+    type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: zuul-server
+  name: zuul-server
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: zuul-server
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: zuul-server
+    spec:
+      containers:
+      - image: dufregistry.azurecr.io/zuul-server:latest
+        imagePullPolicy: Always
+        name: zuul-server
+        resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
