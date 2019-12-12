@@ -28,7 +28,6 @@ az aks create --resource-group=duf-k8s-demo --name=duf-k8s-hello-cluster \
  --service-cidr=10.1.0.0/16 \
  --dns-service-ip=10.1.0.10 \
  --vnet-subnet-id=${VNET_ID}
-# /subscriptions/cda62bf0-9873-424e-9a38-4d15663c4317/resourceGroups/duf-k8s-demo/providers/Microsoft.Network/virtualNetworks/dufk8svnet/subnets/default
 
 # ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDI3Qg/p0CxbBTLtxwG9IvdXKPSJgfbhENjrzNeUuldTlXpKmjgucnBXS+UraqRLjkhpCVz1uyK2Z0X6y0BwnCVRd9tdi1KaOqpqPcMcf00ydl6S2n5COf666eleQk1fNN02SLaUxulNwiKhyG9wNYebHKHz31ZjTV4PPei37yBM8Qp4veOQyk6prsfC9rNYGsWyBFeN4tkOO2/wUFG6nqm0yFZLh6a8j0XM19Shq4hMDN1XVpFgKC4a8COxM3J2LmQxYLKd/fVDDFBUkjKMEmat+dPwI98AMcka+IOoTVAepTLp/yCY2/KPaeUdR/E/9ACt1hL9VzzGqOcQ6G+cuqf dumitrupascu@Dumitrus-Mac-mini.local
 
