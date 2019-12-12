@@ -54,4 +54,30 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>maven.settings.xml</id>
+            <url>https://pkgs.dev.azure.com/minditsoftware/k8s-helloworld/_packaging/maven.settings.xml/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>maven.settings.xml</id>
+            <url>https://pkgs.dev.azure.com/minditsoftware/k8s-helloworld/_packaging/maven.settings.xml/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </distributionManagement>
 </project>
