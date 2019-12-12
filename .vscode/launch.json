@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EurekaServerApplication",
+            "request": "launch",
+            "mainClass": "com.baeldung.spring.cloud.eureka.server.EurekaServerApplication",
+            "projectName": "eureka-server"
+        }
+    ]
+}
