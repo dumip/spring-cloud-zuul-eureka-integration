@@ -13,17 +13,6 @@ steps:
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'Pay-As-You-Go(cda62bf0-9873-424e-9a38-4d15663c4317)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az configure --defaults acr=dufregistry
-      az acr login
-      az acr update -n dufregistry --admin-enabled true
-      az acr credential show --name dufregistry --query passwords[0]
-
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
