@@ -16,14 +16,14 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
+    options: '-DskipTests=true -Djib.to.auth.username=dufregistry -Djib.to.auth.password=3mU6RouKywAopfkZEsCFQdYN3/5GW3P0'
     goals: 'clean package jib:build'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     mavenVersionOption: 'Default'
-    mavenOptions: '-Xmx3072m -DskipTests'
+    mavenOptions: '-Xmx3072m'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-
