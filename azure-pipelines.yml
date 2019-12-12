@@ -18,7 +18,9 @@ steps:
     inlineScript: |
       az configure --defaults acr=dufregistry
       az acr login
+      az acr update -n dufregistry --admin-enabled true
       az acr credential show --name dufregistry --query passwords[0]
+
 # - task: Maven@3
 #   inputs:
 #     mavenPomFile: 'pom.xml'
