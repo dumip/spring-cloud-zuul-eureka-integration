@@ -33,3 +33,20 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: eureka-server
+  name: eureka-server
+  namespace: default
+spec:
+  ports:
+  - port: 8761
+    protocol: TCP
+    targetPort: 8761
+  selector:
+    run: eureka-server
+  sessionAffinity: None
+  type: ClusterIP
