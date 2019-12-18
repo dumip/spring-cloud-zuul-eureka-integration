@@ -37,7 +37,7 @@ public class EurekaClientApplication implements GreetingController {
         String host = InetAddress.getLocalHost().getHostName();
         
         System.out.println("Request received on port number " + portNumber + " and host " + host);
-        return String.format("[V5]Hello from '%s with Host %s  and Port Number %s'!", eurekaClient.getApplication(appName)
+        return String.format("[V6]Hello from '%s with Host %s  and Port Number %s'!", eurekaClient.getApplication(appName)
             .getName(), host, portNumber);
         } catch(UnknownHostException ex) {
             throw new RuntimeException(ex);
